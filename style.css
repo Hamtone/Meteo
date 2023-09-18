@@ -1,0 +1,249 @@
+/* l'étoile est un selecteur universelle qui permet de prendre en compte la page entière */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    /* dégradé du fond d'écran */
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(0, 21, 36, 0.873) 0%, rgba(9, 61, 121, 0.851) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 105px;
+    background: #fff;
+    padding: 28px 32px;
+    /* overflow: hidden; */
+    /* superposition */
+    border-radius: 18px;
+    /* arrondis aux angles */
+    font-family: 'Roboto', sans-serif;
+    transition: 1s ease-out;
+}
+
+.search-box {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-box input {
+    color: #06283d;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    /* met en majuscule la ville que l'utilisateur va rechercher */
+    padding-left: 32px;
+    /* padding non essentiel */
+}
+
+.search-box input::placeholder {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    text-transform: capitalize;
+    font-weight: bold;
+    /* modifie l'apparence de "saisir votre ville" */
+    /*border: solid 2px rgb(78, 51, 51;*/
+    /*rectifier*/
+}
+
+.search-box button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #1270ab;
+    background: rgba(55, 126, 162, 0.254);
+    border-radius: 50%;
+    font-size: 20px;
+    transition: 0.4s ease;
+}
+
+/*changement d'apparence au survol d'un element*/
+.search-box button:hover {
+    color: white;
+    background-color: rgb(206, 101, 101);
+}
+
+
+.search-box i {
+    position: absolute;
+    color: red;
+    font-size: 28px;
+}
+
+.weather-box {
+    text-align: center;
+}
+
+.weather-box img {
+    width: 60%;
+    margin-top: 30px;
+}
+
+.weather-box .temperature {
+    position: relative;
+    color: white;
+    text-shadow: 0 0 10px blue;
+    font-size: 4rem;
+    /*rem multiplie la valeur donnée par 
+    la valeur de notre element racine (ex:4x16px)*/
+    margin-top: 30px;
+    margin-left: -16px;
+}
+
+.weather-box .temperature span {
+    position: absolute;
+    margin-left: 4px;
+    font-size: 1.5rem;
+}
+
+.weather-box .description {
+    color: #06283d;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/*ATTENTION revoir l'emplacement des details*/
+.weather-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.weather-details .humidity,
+.weather-details .wind {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+}
+
+.weather-details .humidity {
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.weather-details .wind {
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+.weather-details i {
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.weather-details span {
+    color: white;
+    text-shadow: 0 0 10px blue;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.weather-details p {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sun {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.sun .sunrise,
+.sun .sunset {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+}
+
+.sun .sunrise {
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.sun .sunset {
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+.sun span {
+    color: white;
+    text-shadow: 0 0 10px blue;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.sun p {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.not-found {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    scale: 0;
+    opacity: 0;
+    display: none;
+}
+
+.not-found img {
+    width: 70%;
+}
+
+.not-found p {
+    color: red;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+
+}
+
+.catgif img {
+    width: 100%;
+}
+
+.weather-box,
+.weather-details,
+.sun, 
+.catgif {
+    scale: 0;
+    opacity: 0;
+}
+
+.fadeIn {
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
